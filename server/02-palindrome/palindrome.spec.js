@@ -1,4 +1,7 @@
 const { expect } = require("@jest/globals");
+let isPalindrome = () => {
+  return true;
+}
 
 describe('the palindrome canary spec', () => {
   it('shows the infrastructure works', () => {
@@ -8,8 +11,11 @@ describe('the palindrome canary spec', () => {
   it ('true for mon', () => {
     expect(isPalindrome('mon')).toBe(true);
   });
-  
-  it.todo ('true for mom');
+
+  it ('false for dude', () => {
+    expect(isPalindrome('due')).toBe(false);
+  });
+
   it.todo ('false for dude');
   it.todo ('true for mom mom');
   it.todo ('false for dad mom');
