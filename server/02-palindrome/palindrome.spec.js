@@ -1,6 +1,11 @@
 const { expect } = require("@jest/globals");
 
-let isPalindrome = (text) => text === text.split('').reverse().join('');
+//let isPalindrome = (text) => text === text.split('').reverse().join('');
+
+let isPalindrome = (phrase) => {
+  if (phrase.trim() === '') return false;
+  return phrase === phrase.split('').reverse().join('')
+};
 
 describe('the palindrome canary spec', () => {
   it('shows the infrastructure works', () => {
@@ -16,8 +21,8 @@ describe('the palindrome canary spec', () => {
   it ('false for dad mom', () => {
     expect(isPalindrome('dad mom')).toBe(false);
   });
-  it ('true for whitespace', () => {
-    expect(isPalindrome(' ')).toBe(true);
+  it ('false for whitespace', () => {
+    expect(isPalindrome(' ')).toBe(false);
   });
 
   it.todo ('true for whitespace');
